@@ -1,13 +1,14 @@
 "use client";
 import React from 'react';
-import { Globe, Bot, Workflow, Rocket, Cog, ArrowUpRight } from 'lucide-react';
+import { Globe, Bot, Workflow, Rocket, Cog, Sparkles, ArrowUpRight } from 'lucide-react';
 
 const SERVICES = [
-  { icon: Globe, name: 'Websites & Web Apps' },
-  { icon: Workflow, name: 'Automation & Systems' },
-  { icon: Cog, name: 'Robotics' },
-  { icon: Bot, name: 'AI Agents & Intelligent Systems' },
-  { icon: Rocket, name: 'Custom Applications' },
+  { icon: Bot, name: 'Machine Learning & Predictive Models' },
+  { icon: Globe, name: 'AI-Powered Web Applications' },
+  { icon: Workflow, name: 'Data Preprocessing & Analytics' },
+  { icon: Rocket, name: 'AutoML & NLP Solutions' },
+  { icon: Cog, name: 'Backend & REST API Development' },
+  { icon: Sparkles, name: 'Cloud & Database Systems' },
 ];
 
 export default function ServicesGrid({ isDarkMode, themeClasses, onRequestService }) {

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Send, CheckCircle2 } from 'lucide-react';
 
-const CONTACT_EMAIL = 'Abdallaelsiddig.m@gmail.com';
+const CONTACT_EMAIL = 'atharvapetkar234@gmail.com';
 
 export default function RequestModal({ request, onClose, isDarkMode, themeClasses }) {
   const [name, setName] = useState('');

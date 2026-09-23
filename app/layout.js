@@ -1,9 +1,9 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Abdalla Elsiddig | AI & Robotics Engineer',
-  description: 'Professional portfolio of Abdalla Elsiddig - AI, Computer Vision & Robotics Engineer',
-  keywords: 'AI, Robotics, Computer Vision, IoT, Engineer, Portfolio',
+  title: 'Atharva Petkar | AI & Data Science Engineer',
+  description: 'Professional portfolio of Atharva Petkar - AI, Data Science & Machine Learning Engineer',
+  keywords: 'AI, Data Science, Machine Learning, Python, Flask, AWS, AutoML, Engineer, Portfolio, Atharva Petkar',
 }
 
 export default function RootLayout({ children }) {

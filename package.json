@@ -1,7 +1,7 @@
 {
-  "name": "abdalla-portfolio",
+  "name": "atharva-portfolio",
   "version": "1.0.0",
-  "description": "Professional portfolio website for Abdalla Elsiddig",
+  "description": "Professional portfolio website for Atharva Petkar",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

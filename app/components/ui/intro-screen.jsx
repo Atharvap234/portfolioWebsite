@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { ParticleTextEffect } from "./particle-text-effect";
 
-const INTRO_WORDS = ["WELCOME TO", "ABDALLA'S PORTFOLIO"];
+const INTRO_WORDS = ["WELCOME TO", "ATHARVA'S PORTFOLIO"];
 
 export function IntroScreen({ onFinish }) {
   const [isFading, setIsFading] = useState(false);

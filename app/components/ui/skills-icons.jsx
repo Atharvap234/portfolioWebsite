@@ -1,33 +1,35 @@
 "use client";
 import React from 'react';
-import { SiPython, SiCplusplus, SiJavascript, SiMysql, SiMqtt, SiOpencv, SiTensorflow, SiYolo } from 'react-icons/si';
-import { Workflow, CircuitBoard, BrainCircuit } from 'lucide-react';
+import { SiPython, SiCplusplus, SiJavascript, SiMysql, SiScikitlearn, SiPandas, SiNumpy, SiReact, SiFlask, SiGit } from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
+import { BrainCircuit } from 'lucide-react';
 
 const SKILL_GROUPS = [
   {
-    category: 'Languages',
+    category: 'Languages & Web',
     items: [
       { name: 'Python', Icon: SiPython },
       { name: 'C++', Icon: SiCplusplus },
       { name: 'JavaScript', Icon: SiJavascript },
-      { name: 'SQL', Icon: SiMysql },
+      { name: 'React.js', Icon: SiReact },
     ],
   },
   {
-    category: 'Robotics',
+    category: 'ML & Data Science',
     items: [
-      { name: 'MQTT', Icon: SiMqtt },
-      { name: 'Embedded Systems', Icon: CircuitBoard },
-      { name: 'Automation', Icon: Workflow },
+      { name: 'Scikit-Learn', Icon: SiScikitlearn },
+      { name: 'Pandas', Icon: SiPandas },
+      { name: 'NumPy', Icon: SiNumpy },
+      { name: 'AutoML & NLP', Icon: BrainCircuit },
     ],
   },
   {
-    category: 'AI & CV',
+    category: 'Cloud & Frameworks',
     items: [
-      { name: 'OpenCV', Icon: SiOpencv },
-      { name: 'TensorFlow', Icon: SiTensorflow },
-      { name: 'YOLO', Icon: SiYolo },
-      { name: 'MindSpore', Icon: BrainCircuit },
+      { name: 'AWS Cloud', Icon: FaAws },
+      { name: 'Flask', Icon: SiFlask },
+      { name: 'MySQL', Icon: SiMysql },
+      { name: 'Git & GitHub', Icon: SiGit },
     ],
   },
 ];

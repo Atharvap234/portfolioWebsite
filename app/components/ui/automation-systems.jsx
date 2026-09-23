@@ -20,7 +20,7 @@ const SYSTEMS = [
       'Live ops dashboard: sales, automation health, department status',
     ],
     tags: ['n8n', 'Multi-Agent Orchestration', 'Governance & Permissions', 'Telegram Bot', 'Ops Dashboard'],
-    repo: 'https://github.com/a-elradi/wazir-agent-department',
+    repo: 'https://github.com/Atharvap234',
   },
   {
     id: 'instagram',
@@ -38,7 +38,7 @@ const SYSTEMS = [
       'Live human handoff via Telegram (/now, /done, /list)',
     ],
     tags: ['n8n', 'Instagram Graph API', 'Gemini AI', 'Shopify API', 'Telegram Handoff'],
-    repo: 'https://github.com/a-elradi/n8n-ai-support-agent-instagram',
+    repo: 'https://github.com/Atharvap234',
   },
   {
     id: 'whatsapp',
@@ -56,7 +56,7 @@ const SYSTEMS = [
       'Handles media attachments and 12-message conversation memory',
     ],
     tags: ['n8n', 'WhatsApp Business API', 'Gemini AI', 'Shopify GraphQL', 'Telegram Escalation'],
-    repo: 'https://github.com/a-elradi/n8n-ai-support-agent-whatsapp',
+    repo: 'https://github.com/Atharvap234',
   },
   {
     id: 'email',
@@ -74,7 +74,7 @@ const SYSTEMS = [
       'Telegram alerts for escalations and workflow failures',
     ],
     tags: ['n8n', 'Outlook / Graph API', 'Gemini AI', 'Shopify GraphQL', 'Auto-Escalation'],
-    repo: 'https://github.com/a-elradi/n8n-ai-support-agent-outlook-',
+    repo: 'https://github.com/Atharvap234',
   },
 ];
 

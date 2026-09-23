@@ -10,22 +10,18 @@ import { IntroScreen } from './components/ui/intro-screen';
 import TubesCursorBackground from './components/ui/tubes-cursor-background';
 import LightBackground from './components/ui/light-background';
 import ChatAgent from './components/ui/chat-agent';
-import AvailabilityCalendar from './components/ui/availability-calendar';
-import ServicesGrid from './components/ui/services-grid';
 import AutomationSystems from './components/ui/automation-systems';
 import RequestModal from './components/ui/request-modal';
 import ProjectsGallery from './components/ui/projects-gallery';
 import SkillsIcons from './components/ui/skills-icons';
 
-const photoSources = ['/profile.png','/p1.jpeg', '/p2.jpeg', '/p3.jpeg', '/p4.jpeg', '/p5.jpeg'];
-const mindsetSources = ['/c1.jpg', '/c2.jpg', '/c3.jpg', '/c4.jpg'];
+const photoSources = ['/atharva.jpg', '/profile.png'];
 const sectionIds = {
   Home: 'home',
   Projects: 'projects',
+  Hackathons: 'hackathons',
   Automations: 'automations',
   Skills: 'skills',
-  Services: 'services',
-  Availability: 'availability',
   Certificates: 'certificates',
   Experience: 'experience',
   Contact: 'contact',
@@ -34,7 +30,6 @@ const sectionIds = {
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState('Home');
   const [photoIndex, setPhotoIndex] = useState(0);
-  const [mindsetIndex, setMindsetIndex] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [showIntro, setShowIntro] = useState(true);
   const [request, setRequest] = useState(null);
@@ -51,13 +46,6 @@ const Portfolio = () => {
       setPhotoIndex((current) => (current + 1) % photoSources.length);
     }, 5000);
     return () => window.clearInterval(intervalId);
-  }, []);
-
-  useEffect(() => {
-    const mindsetInterval = window.setInterval(() => {
-      setMindsetIndex((current) => (current + 1) % mindsetSources.length);
-    }, 3000);
-    return () => window.clearInterval(mindsetInterval);
   }, []);
 
   useEffect(() => {
@@ -104,66 +92,80 @@ const Portfolio = () => {
 
   const experiences = [
     {
-      title: 'AI Automation Engineer',
-      company: 'Glam Moda WLL',
-      period: 'Apr 2026 - Present',
+      title: 'ML Developer & Backend Contributor',
+      company: 'AI-Powered Text-to-AutoML Platform',
+      period: 'Mar 2026 - Present',
       highlights: [
-        'AI-driven workflow automation',
-        'Process optimization',
-        'Systems integration',
+        'Built an AutoML platform that converts natural language descriptions into end-to-end ML workflows using NLP',
+        'Implemented data preprocessing pipelines and integrated TPOT for automated model selection & hyperparameter tuning',
+        'Developed Flask REST APIs and generated model performance reports with evaluation metrics & visualizations',
       ],
     },
     {
-      title: 'IT Technical Support & Web Developer',
-      company: 'Glam Moda',
-      period: 'Oct 2024 - Jan 2026',
+      title: 'Data Analyst & ML Contributor',
+      company: 'AI-Based Football Match Analysis System',
+      period: 'Jul 2025 - Oct 2025',
       highlights: [
-        'Shopify specialization',
-        'System optimization',
-        'Digital Marketing',
+        'Analyzed sports match data using AI/ML models to generate performance insights and predictive analysis',
+        'Performed data preprocessing and feature extraction to support model development for performance analysis',
+        'Generated predictive metrics and visualizations to enhance team tactics and match evaluation',
       ],
     },
     {
-      title: 'President & Founder – IoT Club',
-      company: 'University of Technology Bahrain',
-      period: '2023 - Present (3 Years)',
+      title: 'Backend Developer',
+      company: 'Online Ticket Booking Website',
+      period: 'Jan 2025 - Mar 2025',
       highlights: [
-        'Led 150+ active members',
-        'Organized quarterly innovation challenges',
-        'Award-winning projects',
+        'Designed and built a Flask and MySQL web application with authentication, ticket booking, and payment integration',
+        'Implemented secure login functionality and managed database operations for end-to-end booking workflows',
+        'Structured schema architecture and optimized transactional reliability across user sessions',
       ],
     },
     {
-      title: 'Robotics & IoT Workshop Instructor',
-      company: 'University of Technology Bahrain',
-      period: '2023 - Present (3 Years)',
+      title: 'B.Tech in Artificial Intelligence & Data Science',
+      company: 'K. K. Wagh Institute of Engg. Education and Research',
+      period: '2023 - Present (CGPA: 8.23)',
       highlights: [
-        'Led workshops',
-        'Robot Competition',
-        'Mentored 40+ students',
+        'Reached final screening round in Smart India Hackathon (SIH) 2025',
+        'Participated in NASA Space Apps Challenge',
+        'Active member of college football and cricket tournament teams',
       ],
     },
   ];
 
   const certificateFiles = [
-    { title: 'Hardware and Upgrade Support', file: 'Hardware and Upgrade Support.pdf', type: 'pdf' },
-    { title: 'Getting Started with Cisco Packet Tracer', file: 'Getting Started with Cisco Packet Tracer.pdf', type: 'pdf' },
-    { title: 'Networking', file: 'Networking.pdf', type: 'pdf' },
-    { title: 'IP Network Foundamental', file: 'IP Network Foundamental.pdf', type: 'pdf' },
-    { title: '1 MILLION PROMPTERS', file: '1 MILLION PROMPTERS.pdf', type: 'pdf' },
-    { title: 'First Aid Training', file: 'First Aid Training.pdf', type: 'pdf' },
-    { title: 'Gemini Certified University Student', file: 'Gemini Certified University Student.pdf', type: 'pdf' },
-    { title: 'Google Ads Creative Certification', file: 'Google Ads Creative Certification.pdf', type: 'pdf' },
-    { title: 'Gulf Cx Internship Certificate', file: 'Gulf Cx , internership certifcate .pdf', type: 'pdf' },
-    { title: 'Huawei ICT Competition', file: 'Huawei ICT Competition.pdf', type: 'pdf' },
-    { title: 'Internet Of Things Certificate', file: 'Internet Of Things Certificate.pdf', type: 'pdf' },
-    { title: 'Intro to Modern AI Certificate', file: 'Intro to Modern AI Certificate.pdf', type: 'pdf' },
-    { title: 'Introduction to Cybersecurity Awareness', file: 'Introduction to Cybersecurity Awareness.pdf', type: 'pdf' },
-    { title: 'Microsoft Certificate', file: 'Microsoft Certificate.pdf', type: 'pdf' },
-    { title: 'Professional Networking for Career Growth', file: 'Professional Networking for Career Growth.pdf', type: 'pdf' },
-    { title: 'Python Essentials', file: 'PythonEssentials1.pdf', type: 'pdf' },
-    { title: 'Altaawon Secondary School', file: 'Altaawon Secondary School.pdf', type: 'pdf' },
-    { title: 'RAS WORKSHOP', file: 'RAS WORKSHOP.pdf', type: 'pdf' },
+    {
+      title: 'Oracle Cloud Infrastructure Generative AI (2025)',
+      issuer: 'Oracle',
+      skills: 'Generative AI, LLMs, Prompt Engineering, OCI AI Services',
+      file: 'Atharva-Petkar-Resume.pdf',
+      badge: 'oracle',
+      type: 'pdf',
+    },
+    {
+      title: 'AWS Certified Cloud Practitioner',
+      issuer: 'Amazon Web Services',
+      skills: 'AWS Cloud, Cloud Architecture, Security, Networking',
+      file: 'Atharva-Petkar-Resume.pdf',
+      badge: 'aws',
+      type: 'pdf',
+    },
+    {
+      title: 'The Bits and Bytes of Computer Networking',
+      issuer: 'Google',
+      skills: 'TCP/IP, DNS, Routing, Network Protocols, Cloud Networking',
+      file: 'Atharva-Petkar-Resume.pdf',
+      badge: 'google',
+      type: 'pdf',
+    },
+    {
+      title: 'OS and You: Becoming a Power User',
+      issuer: 'Google',
+      skills: 'Linux, Windows, System Administration, Command Line',
+      file: 'Atharva-Petkar-Resume.pdf',
+      badge: 'google',
+      type: 'pdf',
+    },
   ];
 
   const getCertificateBadgePath = (certificate) => {
@@ -193,7 +195,7 @@ const Portfolio = () => {
 
       {/* FLOATING NAV — desktop */}
       <nav className={`hidden md:flex fixed top-8 left-1/2 -translate-x-1/2 z-50 items-center gap-2 p-1.5 backdrop-blur-2xl rounded-full shadow-2xl ${themeClasses.nav}`}>
-        {['Home', 'Projects', 'Automations', 'Skills', 'Services', 'Availability', 'Certificates', 'Experience', 'Contact'].map((tab) => (
+        {['Home', 'Projects', 'Hackathons', 'Automations', 'Skills', 'Certificates', 'Experience', 'Contact'].map((tab) => (
           <button
             key={tab}
             onClick={() => handleNavClick(tab)}
@@ -220,7 +222,7 @@ const Portfolio = () => {
       {/* MOBILE NAV */}
       <nav className={`md:hidden fixed top-4 left-4 right-4 z-50 rounded-2xl shadow-2xl ${themeClasses.nav}`}>
         <div className="flex items-center justify-between px-4 py-3">
-          <span className={`text-xs font-black uppercase tracking-[0.2em] ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>AE</span>
+          <span className={`text-xs font-black uppercase tracking-[0.2em] ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>AP</span>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setIsDarkMode((current) => !current)}
@@ -240,7 +242,7 @@ const Portfolio = () => {
         </div>
         {mobileNavOpen && (
           <div className={`px-3 pb-3 flex flex-col gap-1 border-t ${isDarkMode ? 'border-white/10' : 'border-neutral-200'}`}>
-            {['Home', 'Projects', 'Automations', 'Skills', 'Services', 'Availability', 'Certificates', 'Experience', 'Contact'].map((tab) => (
+            {['Home', 'Projects', 'Hackathons', 'Automations', 'Skills', 'Certificates', 'Experience', 'Contact'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => handleNavClick(tab)}
@@ -258,7 +260,7 @@ const Portfolio = () => {
       {/* SOCIAL RAIL — fixed, vertically centered, visible on every screen regardless of scroll */}
       <div className={`fixed top-1/2 -translate-y-1/2 left-4 sm:left-6 z-50 flex flex-col items-center gap-2 p-2 backdrop-blur-2xl rounded-full shadow-2xl border ${isDarkMode ? 'border-emerald-500/20' : 'border-emerald-600/20'} ${themeClasses.nav}`}>
         <a
-          href="https://github.com/a-elradi"
+          href="https://github.com/Atharvap234"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub profile"
@@ -267,7 +269,7 @@ const Portfolio = () => {
           <Github size={20} />
         </a>
         <a
-          href="https://www.linkedin.com/in/abdalla-elsiddig/"
+          href="https://www.linkedin.com/in/atharva-petkar-a1b3a3296"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn profile"
@@ -276,16 +278,7 @@ const Portfolio = () => {
           <Linkedin size={20} />
         </a>
         <a
-          href="https://linktr.ee/Abdallaelsiddig"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Linktree"
-          className={`inline-flex items-center justify-center w-11 h-11 rounded-full transition ${isDarkMode ? 'text-gray-300 hover:text-white hover:bg-white/10' : 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-900/10'}`}
-        >
-          <LinkIcon size={20} />
-        </a>
-        <a
-          href="mailto:Abdallaelsiddig.m@gmail.com"
+          href="mailto:atharvapetkar234@gmail.com"
           aria-label="Send email"
           className={`inline-flex items-center justify-center w-11 h-11 rounded-full transition ${isDarkMode ? 'text-gray-300 hover:text-white hover:bg-white/10' : 'text-neutral-700 hover:text-neutral-900 hover:bg-neutral-900/10'}`}
         >
@@ -301,16 +294,16 @@ const Portfolio = () => {
           {/* NAME CARD */}
           <div className={`md:col-span-4 md:col-start-1 md:row-span-1 min-h-[170px] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_10px_45px_rgba(0,_0,_0,_0.35)] ${themeClasses.card}`}>
             <span aria-hidden="true" className={`pointer-events-none select-none absolute -right-4 -bottom-12 text-[9rem] font-black leading-none ${isDarkMode ? 'text-white/[0.04]' : 'text-neutral-900/[0.04]'}`}>
-              AE
+              AP
             </span>
             <div className="relative z-10">
               <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-emerald-400 font-black mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Informatics Engineer
+                AI & Data Science Engineer
               </span>
               <h1 className={`text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.95] ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>
-                ABDALLA<br />
-                <span className="text-gray-400">ELRADI</span>
+                ATHARVA<br />
+                <span className="text-gray-400">PETKAR</span>
               </h1>
             </div>
             <div className={`relative z-10 mt-8 h-px w-full bg-gradient-to-r from-emerald-500/70 ${isDarkMode ? 'via-white/10' : 'via-neutral-900/10'} to-transparent`} />
@@ -321,7 +314,7 @@ const Portfolio = () => {
             <img
               src={photoSources[photoIndex]}
               className="w-full h-full object-cover"
-              alt={`Profile image ${photoIndex + 1}`}
+              alt="Atharva Petkar profile"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
           </div>
@@ -333,11 +326,11 @@ const Portfolio = () => {
                 <Cpu size={22} className="text-emerald-400" /> CRAFT
               </h3>
               <p className={`${themeClasses.mutedText} text-sm leading-relaxed mb-8`}>
-                Demonstrated expertise in <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-medium`}>artificial intelligence, computer vision, IoT, and robotics</span>, with <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-medium`}>1.5+ years of professional experience</span> building innovative systems.
+                Demonstrated expertise in <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-medium`}>machine learning, Python, and AI-driven application development</span>, with hands-on experience building end-to-end ML workflows, data preprocessing, and model evaluation.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              {['AI', 'Python', 'OpenCV', 'Automation'].map((t) => (
+              {['AI', 'Machine Learning', 'Python', 'AutoML'].map((t) => (
                 <span key={t} className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase ${isDarkMode ? 'bg-white/5 border border-white/10 text-gray-300' : 'bg-neutral-100 border border-neutral-200 text-neutral-700'}`}>{t}</span>
               ))}
             </div>
@@ -350,16 +343,13 @@ const Portfolio = () => {
                 <Dribbble size={22} className="text-emerald-400" /> MINDSET
               </h3>
               <p className={`${themeClasses.mutedText} text-sm leading-relaxed`}>
-                Excellence is a habit. <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-medium italic`}>Basketball</span> taught me discipline, focus, and leadership — qualities I apply to every engineering challenge.
+                Excellence is built through consistency and teamwork. Active participation in <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-medium italic`}>football and cricket</span> tournaments taught me discipline, strategic focus, and agility — qualities I bring to every engineering challenge.
               </p>
             </div>
-            <div className={`rounded-[2rem] overflow-hidden shadow-inner ${themeClasses.subCard}`}>
-              <img
-                src={mindsetSources[mindsetIndex]}
-                alt={`Mindset image ${mindsetIndex + 1}`}
-                loading="lazy"
-                className="w-full h-[220px] sm:h-[360px] object-cover"
-              />
+            <div className={`mt-4 flex flex-wrap gap-3`}>
+              {['Discipline', 'Teamwork', 'Strategy', 'Resilience'].map((trait) => (
+                <span key={trait} className={`px-4 py-2 rounded-xl text-[10px] font-black uppercase ${isDarkMode ? 'bg-white/5 border border-white/10 text-gray-300' : 'bg-neutral-100 border border-neutral-200 text-neutral-700'}`}>{trait}</span>
+              ))}
             </div>
           </div>
 
@@ -369,22 +359,22 @@ const Portfolio = () => {
               <Quote size={28} />
             </div>
             <p className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} text-xl md:text-2xl font-black leading-tight`}>
-              “Build with purpose. Lead with vision.”
+              “Build with purpose. Solve with intelligence.”
             </p>
           </div>
 
           {/* LOCATION */}
           <div className={`md:col-span-4 md:col-start-9 md:row-start-2 min-h-[160px] rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-[0_0_35px_rgba(255,_255,_255,_0.05)] ${themeClasses.card}`}>
             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-3xl rounded-full -mr-10 -mt-10"></div>
-            <img src="/manama.jpg" alt="Manama" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-15" />
+            <img src="/manama.jpg" alt="Nashik" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-15" />
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <MapPin className="text-emerald-400" size={22} />
                 <span className={`text-[10px] uppercase tracking-[0.35em] ${themeClasses.mutedText}`}>Location</span>
               </div>
-              <h3 className={`text-2xl md:text-3xl font-black uppercase tracking-tight mb-3 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Manama, Bahrain</h3>
+              <h3 className={`text-2xl md:text-3xl font-black uppercase tracking-tight mb-3 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Nashik, Maharashtra</h3>
               <p className={`${isDarkMode ? 'text-gray-400' : 'text-neutral-600'} text-[12px] md:text-[13px] uppercase font-semibold tracking-[0.25em]`}>
-                26.2235°N, 50.5876°E
+                19.9975°N, 73.7898°E
               </p>
             </div>
           </div>
@@ -397,6 +387,62 @@ const Portfolio = () => {
           </div>
 
           <ProjectsGallery isDarkMode={isDarkMode} themeClasses={themeClasses} />
+        </section>
+
+        {/* HACKATHONS SECTION */}
+        <section id="hackathons" className="mb-32">
+          <div className="text-center mb-16">
+            <p className={`text-[10px] font-black uppercase tracking-[0.5em] ${themeClasses.mutedText}`}>COMPETITIONS</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mt-4">Hackathon <span className="text-emerald-500">achievements</span></h2>
+            <p className={`${themeClasses.mutedText} max-w-2xl mx-auto mt-6 leading-relaxed`}>
+              Competed in national and international hackathons, driving innovation through rapid prototyping and cross-functional collaboration.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* SIH Card */}
+            <div className={`rounded-[2.5rem] p-8 sm:p-10 flex flex-col justify-between gap-6 shadow-[0_10px_45px_rgba(0,0,0,0.3)] relative overflow-hidden ${themeClasses.card}`}>
+              <div className="absolute -right-6 -top-6 w-40 h-40 rounded-full bg-emerald-500/10 blur-3xl" />
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shadow-lg">
+                    <Trophy size={28} />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400">National Level</span>
+                </div>
+                <h3 className={`text-2xl md:text-3xl font-black uppercase tracking-tight mb-3 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Smart India Hackathon 2025</h3>
+                <p className={`${themeClasses.mutedText} text-sm leading-relaxed mb-6`}>
+                  Reached the <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-semibold`}>final screening round</span> at SIH 2025 — India's biggest hackathon organized by the Government of India. Developed an innovative AI-driven solution competing against top engineering teams nationwide.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['AI Solution', 'National Finalist', 'Govt. of India', 'Team Collaboration'].map((tag) => (
+                    <span key={tag} className={`px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wide ${isDarkMode ? 'bg-white/5 border border-white/10 text-gray-300' : 'bg-neutral-100 border border-neutral-200 text-neutral-700'}`}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* NASA Card */}
+            <div className={`rounded-[2.5rem] p-8 sm:p-10 flex flex-col justify-between gap-6 shadow-[0_10px_45px_rgba(0,0,0,0.3)] relative overflow-hidden ${themeClasses.card}`}>
+              <div className="absolute -left-6 -bottom-6 w-40 h-40 rounded-full bg-emerald-500/10 blur-3xl" />
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shadow-lg">
+                    <Sparkles size={28} />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400">International Level</span>
+                </div>
+                <h3 className={`text-2xl md:text-3xl font-black uppercase tracking-tight mb-3 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>NASA Space Apps Challenge</h3>
+                <p className={`${themeClasses.mutedText} text-sm leading-relaxed mb-6`}>
+                  Participated in <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-semibold`}>NASA's global hackathon</span>, one of the world's largest innovation events. Worked on solving real-world space and science problems using data, AI, and creative engineering.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['NASA', 'International', 'Space Tech', 'Data Science'].map((tag) => (
+                    <span key={tag} className={`px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wide ${isDarkMode ? 'bg-white/5 border border-white/10 text-gray-300' : 'bg-neutral-100 border border-neutral-200 text-neutral-700'}`}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* AUTOMATION SYSTEMS SECTION */}
@@ -420,35 +466,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-14 sm:py-20 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className={`text-[10px] font-black uppercase tracking-[0.5em] ${themeClasses.mutedText}`}>WHAT I OFFER</p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-black mt-4 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Services</h2>
-          </div>
-          <ServicesGrid
-            isDarkMode={isDarkMode}
-            themeClasses={themeClasses}
-            onRequestService={(serviceName) => setRequest({ type: 'service', serviceName })}
-          />
-        </div>
-      </section>
 
-      {/* Availability Section */}
-      <section id="availability" className="py-14 sm:py-20 px-4 sm:px-6">
-        <div className={`max-w-7xl mx-auto rounded-[2.5rem] p-6 sm:p-10 ${themeClasses.panel}`}>
-          <div className="mb-8">
-            <p className={`text-[10px] font-black uppercase tracking-[0.5em] ${themeClasses.mutedText}`}>SCHEDULE</p>
-            <h2 className={`text-4xl font-black mt-4 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Availability</h2>
-          </div>
-          <AvailabilityCalendar
-            isDarkMode={isDarkMode}
-            themeClasses={themeClasses}
-            onRequestDate={(date) => setRequest({ type: 'booking', date })}
-          />
-        </div>
-      </section>
 
       {/* Certificates Section */}
       <section id="certificates" className="py-14 sm:py-20 px-4 sm:px-6">
@@ -458,42 +476,30 @@ const Portfolio = () => {
             <h2 className={`text-3xl sm:text-4xl md:text-5xl font-black mt-4 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Certificates</h2>
           </div>
           <p className={`${isDarkMode ? 'text-gray-300' : 'text-neutral-700'} text-center max-w-3xl mx-auto mb-10`}>
-            These certifications show my learning progress in AI, robotics, web development, and systems engineering. I keep the verified files in <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-semibold`}>/public/certificates</span>.
+            These verified certifications demonstrate my technical expertise in Generative AI, cloud architecture, computer networking, and system administration.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {certificateFiles.map((certificate) => (
-              <div key={certificate.file} className={`overflow-hidden rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.25)] ${themeClasses.card}`}>
-                {certificate.type === 'image' ? (
-                  <img src={`/certificates/${certificate.file}`} alt={certificate.title} loading="lazy" className="h-64 w-full object-cover" />
-                ) : (
-                  <div className="flex h-64 w-full items-center justify-center bg-gradient-to-br from-neutral-900 via-[#06070d] to-neutral-800 p-6">
-                    <img
-                      src={getCertificateBadgePath(certificate)}
-                      alt={`${certificate.title} badge`}
-                      loading="lazy"
-                      className="max-h-36 max-w-full object-contain"
-                      onError={(event) => {
-                        const target = event.currentTarget;
-                        target.onerror = null;
-                        target.src = getCertificateBadgePath(certificate).replace(/\.png$/i, '.jpg');
-                      }}
-                    />
+              <div key={certificate.title} className={`overflow-hidden rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.25)] ${themeClasses.card}`}>
+                <div className="flex flex-col h-64 w-full items-center justify-center bg-gradient-to-br from-neutral-900 via-[#06070d] to-neutral-800 p-6 text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4 shadow-lg shadow-emerald-500/10">
+                    <Award size={32} />
                   </div>
-                )}
+                  <span className="text-xs font-black uppercase tracking-[0.2em] text-emerald-400 mb-1">{certificate.issuer}</span>
+                  <span className="text-[11px] text-gray-400 font-semibold px-4 line-clamp-2">{certificate.skills}</span>
+                </div>
                 <div className="p-5">
                   <p className={`text-sm font-semibold ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>{certificate.title}</p>
                   <p className={`${isDarkMode ? 'text-gray-400' : 'text-neutral-600'} text-xs mt-2`}>
-                    {certificate.type === 'pdf'
-                      ? 'Click to open or download the certificate.'
-                      : 'Image preview of the certificate.'}
+                    Verified credential and curriculum.
                   </p>
                   <a
-                    href={`/certificates/${certificate.file}`}
+                    href={`/${certificate.file}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-emerald-400 hover:text-emerald-300"
                   >
-                    View Certificate
+                    View Credential
                     <ArrowUpRight size={12} />
                   </a>
                 </div>
@@ -529,16 +535,16 @@ const Portfolio = () => {
       <section id="contact" className="py-14 sm:py-20 px-4 sm:px-6">
         <div className={`max-w-7xl mx-auto rounded-[2.5rem] p-6 sm:p-10 text-center ${themeClasses.panel}`}>
           <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-4 uppercase tracking-wide ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Let&apos;s Work Together</h2>
-          <p className={`${isDarkMode ? 'text-gray-300' : 'text-neutral-700'} mb-8 text-lg max-w-2xl mx-auto`}>Open to exciting opportunities in AI, computer vision, robotics, and education community collaborations. Let&apos;s build the future together.</p>
+          <p className={`${isDarkMode ? 'text-gray-300' : 'text-neutral-700'} mb-8 text-lg max-w-2xl mx-auto`}>Open to exciting opportunities in AI, Machine Learning, Data Science, and software engineering. Let&apos;s build intelligent solutions together.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
-              href="mailto:Abdallaelsiddig.m@gmail.com" 
+              href="mailto:atharvapetkar234@gmail.com" 
               className="bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-3 rounded-xl font-bold transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20"
             >
               <Mail size={20} /> Get In Touch
             </a>
             <a
-              href="/Abdalla-Elsiddig.Resume.pdf"
+              href="/Atharva-Petkar-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/10 hover:bg-white/20 text-white px-10 py-3 rounded-xl font-bold transition-all flex items-center gap-2 border border-white/10 shadow-lg shadow-white/10"
@@ -546,7 +552,7 @@ const Portfolio = () => {
               <ExternalLink size={20} /> Review Resume
             </a>
             <a
-              href="/Abdalla-Elsiddig.Resume.pdf"
+              href="/Atharva-Petkar-Resume.pdf"
               download
               className="bg-neutral-800 hover:bg-neutral-700 text-white px-10 py-3 rounded-xl font-bold transition-all flex items-center gap-2 border border-emerald-500/20 shadow-lg shadow-emerald-500/20"
             >
@@ -554,8 +560,8 @@ const Portfolio = () => {
             </a>
           </div>
           <div className={`mt-16 pt-8 border-t ${isDarkMode ? 'border-white/5 text-gray-500' : 'border-neutral-200 text-neutral-500'} text-xs tracking-widest uppercase`}>
-            <p className="mb-2 tracking-normal text-sm lowercase"> Abdallaelsiddig.m@gmail.com</p>
-            <p>© 2026 Abdalla Elradi.</p>
+            <p className="mb-2 tracking-normal text-sm lowercase"> atharvapetkar234@gmail.com • +91 7066731313</p>
+            <p>© 2026 Atharva Petkar.</p>
           </div>
         </div>
       </section>
@@ -564,7 +570,7 @@ const Portfolio = () => {
       {/* FOOTER */}
       <footer className={`relative z-10 border-t py-16 px-6 text-center ${isDarkMode ? 'border-white/5 bg-[#0a0a0a]' : 'border-neutral-200 bg-neutral-50'}`}>
         <div className={`${isDarkMode ? 'text-gray-500' : 'text-neutral-500'} text-xs font-black uppercase tracking-[0.2em]`}>
-            © 2026 Abdalla Elradi
+            © 2026 Atharva Petkar
         </div>
       </footer>
 

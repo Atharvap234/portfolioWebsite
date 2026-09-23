@@ -4,52 +4,28 @@ import { X, ArrowUpRight } from 'lucide-react';
 
 const PROJECTS = [
   {
-    id: 'amr',
-    category: '01 — Robotics',
-    title: 'AMR Warehouse Robot',
+    id: 'automl',
+    category: '01 — Machine Learning & NLP',
+    title: 'AI-Powered Text-to-AutoML Platform',
     image: '/1.png',
-    description: 'Autonomous mobile robot with SLAM navigation, computer vision, and warehouse automation for smart logistics.',
-    tags: ['ROS', 'SLAM', 'PYTHON', 'OPENCV', 'YOLO'],
+    description: 'AutoML platform that converts natural language descriptions into end-to-end machine learning workflows using NLP and automated model optimization. Features TPOT integration, automated model selection, and Flask REST APIs.',
+    tags: ['NLP', 'AutoML', 'TPOT', 'PYTHON', 'FLASK', 'REST API'],
   },
   {
-    id: 'techtrap',
-    category: '02 — AI Healthcare',
-    title: 'TECHTRAP',
-    image: '/Huawie.jpg',
-    description: 'AI-powered rehabilitation and educational system built for the Huawei ICT Competition.',
-    tags: ['Machine Learning', 'MindSpore', 'PYTHON', 'OPENCV', 'AI'],
-  },
-  {
-    id: 'firex',
-    category: '03 — Robotics',
-    title: 'FireX Robot',
-    image: '/7.jpeg',
-    description: 'Advanced firefighter robot with AI-powered navigation and rescue capabilities.',
-    tags: ['ESP32', 'C++', 'UI Dashboard', 'MQTT', 'AI'],
-  },
-  {
-    id: 'cv',
-    category: '04 — Computer Vision',
-    title: 'Computer Vision Projects',
+    id: 'football',
+    category: '02 — Sports AI & Analytics',
+    title: 'AI Football Match Analysis System',
     image: '/MV.jpeg',
-    description: 'A collection of computer vision projects covering AI-powered image processing and analysis.',
-    tags: ['Computer Vision', 'Deep Learning', 'PYTHON', 'OPENCV', 'TensorFlow'],
+    description: 'Advanced sports match data analytics using AI/ML models to generate performance insights, feature extraction, and predictive match outcome analysis.',
+    tags: ['Machine Learning', 'Data Preprocessing', 'PYTHON', 'Pandas', 'Scikit-Learn'],
   },
   {
-    id: 'iot',
-    category: '05 — Robotics',
-    title: 'Sumo X Competition',
-    image: '/8.jpeg',
-    description: 'IoT-based automation systems with real-time monitoring and control capabilities.',
-    tags: ['Embedded Systems', 'Automation', 'PLC Basics', 'Cloud IoT', 'Sensors'],
-  },
-  {
-    id: 'robonexus',
-    category: '06 — Combat Robotics',
-    title: 'Robonexus',
-    image: '/9.jpeg',
-    description: 'World-championship combat robotics competition entry — innovative robot design and battle strategy.',
-    tags: ['Embedded Systems', 'PCB Design', 'Battle Tactics', 'Mechanical Engineering'],
+    id: 'booking',
+    category: '03 — Full Stack Web',
+    title: 'Online Ticket Booking Platform',
+    image: '/Huawie.jpg',
+    description: 'Full stack Flask and MySQL web application with secure user authentication, interactive ticket reservation, payment integration, and end-to-end database workflows.',
+    tags: ['FLASK', 'MYSQL', 'PYTHON', 'JavaScript', 'REST API'],
   },
 ];
 
@@ -72,20 +48,15 @@ export default function ProjectsGallery({ isDarkMode, themeClasses }) {
           <button
             key={project.id}
             onClick={() => setActive(project)}
-            className="group relative overflow-hidden rounded-[2rem] text-left aspect-[4/5]"
+            className="group relative overflow-hidden rounded-2xl text-left bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 border border-white/10 hover:border-emerald-500/40 transition-all duration-300 p-6 pr-14 flex flex-col justify-between gap-3"
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            {/* Subtle animated background glow */}
+            <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none"
+              style={{ background: 'radial-gradient(ellipse at 30% 70%, #10b98133 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, #6366f133 0%, transparent 60%)' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-            <div className="absolute inset-0 p-6 flex flex-col justify-end">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400 mb-2">{project.category}</p>
-              <h3 className="text-xl md:text-2xl font-black text-white leading-tight">{project.title}</h3>
-            </div>
-            <div className="absolute top-5 right-5 w-9 h-9 rounded-full bg-black/40 backdrop-blur flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400">{project.category}</p>
+            <h3 className="text-xl md:text-2xl font-black text-white leading-tight">{project.title}</h3>
+            <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 backdrop-blur flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
               <ArrowUpRight size={16} />
             </div>
           </button>
@@ -103,8 +74,10 @@ export default function ProjectsGallery({ isDarkMode, themeClasses }) {
             >
               <X size={18} />
             </button>
-            <div className="aspect-[16/9]">
-              <img src={active.image} alt={active.title} className="w-full h-full object-cover" />
+            <div className="aspect-[16/9] bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 flex items-center justify-center"
+              style={{ background: 'radial-gradient(ellipse at 30% 70%, #10b98122 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, #6366f122 0%, transparent 60%), #111827' }}
+            >
+              <p className="text-4xl md:text-5xl font-black text-white/10 uppercase tracking-widest text-center px-8">{active.title}</p>
             </div>
             <div className="p-8">
               <p className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-400 mb-2">{active.category}</p>

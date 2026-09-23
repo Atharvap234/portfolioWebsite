@@ -5,52 +5,52 @@ import { Send, X, Sparkles } from 'lucide-react';
 const KNOWLEDGE_BASE = [
   {
     keywords: ['skill', 'tech', 'stack', 'language', 'know', 'good at'],
-    reply: "Abdalla works across Python, C++, JavaScript, and SQL, with hands-on robotics experience in MQTT, embedded systems, and automation, plus AI/computer vision work in OpenCV, TensorFlow, YOLO, and MindSpore. Check the Skills section for the full breakdown.",
+    reply: "Atharva works across Python, C++, JavaScript, React.js, Flask, and MySQL. In ML & Data Science, he specializes in Scikit-learn, Pandas, NumPy, NLP, feature engineering, and AutoML (TPOT), alongside AWS Cloud and Linux. Check the Skills section for the full breakdown.",
   },
   {
-    keywords: ['experience', 'work', 'job', 'career', 'background'],
-    reply: "He's currently AI Automation Engineer at Glam Moda WLL (previously IT Technical Support & Web Developer there), President & Founder of the IoT Club at University of Technology Bahrain, and a Robotics & IoT Workshop Instructor there too. See the Experience section for details.",
+    keywords: ['experience', 'education', 'college', 'work', 'job', 'career', 'background'],
+    reply: "Atharva is pursuing his B.Tech in Artificial Intelligence and Data Science at K. K. Wagh Institute of Engineering Education and Research (CGPA: 8.23). He has built production-grade ML workflows and web applications, and reached the final screening round in Smart India Hackathon (SIH) 2025.",
   },
   {
-    keywords: ['project', 'built', 'robot', 'portfolio', 'work you'],
-    reply: "Highlights include an AMR warehouse robot with SLAM navigation, TECHTRAP (an AI rehab & education system), the FireX firefighting robot, several computer vision projects, IoT automation systems, and Robonexus combat robotics. They're all in the Projects section with images.",
+    keywords: ['project', 'built', 'portfolio', 'work you'],
+    reply: "Key projects include the AI-Powered Text-to-AutoML Platform (converting NLP queries into trained ML models via TPOT), the AI-Based Football Match Analysis System, and a full-stack Online Ticket Booking Website with Flask & MySQL. Check the Projects section for details!",
   },
   {
     keywords: ['certificate', 'certification', 'credential', 'course'],
-    reply: "Abdalla holds certifications spanning networking (Cisco, IP Networking), AI (Gemini, Intro to Modern AI), cybersecurity awareness, Huawei ICT Competition, and more — all viewable in the Certificates section.",
+    reply: "Atharva holds prestigious certifications including Oracle Cloud Infrastructure Generative AI (2025), AWS Certified Cloud Practitioner, Google Computer Networking, and Google System Administration. You can view them in the Certificates section.",
   },
   {
     keywords: ['location', 'where', 'based', 'live', 'country', 'city'],
-    reply: "He's based in Manama, Bahrain.",
+    reply: "He is based in Nashik, Maharashtra, India.",
   },
   {
     keywords: ['contact', 'email', 'reach', 'phone'],
-    reply: `You can reach him directly at Abdallaelsiddig.m@gmail.com, or use the Contact section at the bottom of the page.`,
+    reply: `You can reach him directly at atharvapetkar234@gmail.com or call +91 7066731313, or use the Contact section below.`,
   },
   {
     keywords: ['resume', 'cv'],
-    reply: "You can view or download his resume from the Contact section — there are buttons for both.",
+    reply: "You can view or download his resume right from the Contact section — there are buttons for both review and direct download.",
   },
   {
     keywords: ['service', 'offer', 'provide', 'hire you for', 'what can you do'],
-    reply: "Abdalla builds websites & web apps, automation/systems integration, AI agents & intelligent systems, and custom applications. Take a look at the Services section — each card has a 'Request this service' button.",
+    reply: "Atharva offers Machine Learning & Predictive Modeling, AI-Powered Web Applications, Data Analytics & Preprocessing, and Backend REST API Development. Take a look at the Services section to send a quick request.",
     action: 'services',
   },
   {
     keywords: ['book', 'meeting', 'schedule', 'call', 'available', 'availability', 'talk', 'chat with him'],
-    reply: "Happy to help you set that up. Scroll down to the Availability calendar — pick an open day and it'll open a quick request form, or I can open it for you now.",
+    reply: "Happy to help you set that up. Scroll down to the Availability calendar — select any preferred date and it will open a meeting request form.",
     action: 'availability',
   },
   {
     keywords: ['hire', 'work with', 'collaborate'],
-    reply: "Great to hear! The fastest way is to book a meeting via the Availability calendar, or send a service request from the Services section with your project details.",
+    reply: "Great to hear! You can book a meeting via the Availability calendar, send a message through the Services section, or email him directly at atharvapetkar234@gmail.com.",
     action: 'availability',
   },
 ];
 
-const FALLBACK_REPLY = "I'm a simple FAQ assistant, so I might not have that one — try asking about skills, experience, projects, certificates, services, or booking a meeting. You can also email Abdalla directly at Abdallaelsiddig.m@gmail.com.";
+const FALLBACK_REPLY = "I'm a simple FAQ assistant for Atharva — try asking about his skills, projects, certifications, education, services, or booking a meeting. You can also email him directly at atharvapetkar234@gmail.com.";
 
-const QUICK_REPLIES = ['What are your skills?', 'What services do you offer?', 'Book a meeting', 'How can I contact you?'];
+const QUICK_REPLIES = ['What are your skills?', 'What services do you offer?', 'Tell me about your projects', 'How can I contact you?'];
 
 function matchReply(text) {
   const lower = text.toLowerCase();
@@ -66,7 +66,7 @@ export default function ChatAgent({ isDarkMode, themeClasses, onNavigate, accent
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([
-    { role: 'bot', text: "Hi, I'm Abdalla's assistant. Ask me about his skills, projects, experience, or services — or say you'd like to book a meeting." },
+    { role: 'bot', text: "Hi, I'm Atharva's assistant. Ask me about his AI/ML skills, projects, certifications, or services — or say you'd like to book a meeting." },
   ]);
   const scrollRef = useRef(null);
 
@@ -113,7 +113,7 @@ export default function ChatAgent({ isDarkMode, themeClasses, onNavigate, accent
               <Sparkles size={18} />
             </div>
             <div>
-              <p className={`text-sm font-black ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Ask about Abdalla</p>
+              <p className={`text-sm font-black ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Ask about Atharva</p>
               <p className="text-[11px] text-emerald-400 uppercase tracking-widest font-bold">FAQ assistant</p>
             </div>
           </div>
