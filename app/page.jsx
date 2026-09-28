@@ -411,7 +411,7 @@ const Portfolio = () => {
                 </div>
                 <h3 className={`text-2xl md:text-3xl font-black uppercase tracking-tight mb-3 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>Smart India Hackathon 2025</h3>
                 <p className={`${themeClasses.mutedText} text-sm leading-relaxed mb-6`}>
-                  Reached the <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-semibold`}>final screening round</span> at SIH 2025 — India's biggest hackathon organized by the Government of India. Developed an innovative AI-driven solution competing against top engineering teams nationwide.
+                  Reached the <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-semibold`}>final screening round</span> at SIH 2025 — India&apos;s biggest hackathon organized by the Government of India. Developed an innovative AI-driven solution competing against top engineering teams nationwide.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {['AI Solution', 'National Finalist', 'Govt. of India', 'Team Collaboration'].map((tag) => (
@@ -433,7 +433,7 @@ const Portfolio = () => {
                 </div>
                 <h3 className={`text-2xl md:text-3xl font-black uppercase tracking-tight mb-3 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>NASA Space Apps Challenge</h3>
                 <p className={`${themeClasses.mutedText} text-sm leading-relaxed mb-6`}>
-                  Participated in <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-semibold`}>NASA's global hackathon</span>, one of the world's largest innovation events. Worked on solving real-world space and science problems using data, AI, and creative engineering.
+                  Participated in <span className={`${isDarkMode ? 'text-white' : 'text-neutral-900'} font-semibold`}>NASA&apos;s global hackathon</span>, one of the world's largest innovation events. Worked on solving real-world space and science problems using data, AI, and creative engineering.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {['NASA', 'International', 'Space Tech', 'Data Science'].map((tag) => (
